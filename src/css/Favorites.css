@@ -1,0 +1,90 @@
+/* Root container */
+.favorites {
+  padding: 3rem 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+/* Heading */
+.favorites h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Grid for favorite movies */
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+/* Empty state with glassmorphism */
+.favorites-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  margin: 4rem auto;
+  transition: all 0.3s ease;
+}
+
+.favorites-empty h2 {
+  font-size: 2.2rem;
+  color: #ff4b2b;
+  margin-bottom: 1rem;
+}
+
+.favorites-empty p {
+  font-size: 1.2rem;
+  color: #cccccc;
+  line-height: 1.6;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.movies-grid > * {
+  animation: fadeIn 0.4s ease-in-out forwards;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .favorites h2 {
+    font-size: 2.2rem;
+  }
+
+  .favorites-empty {
+    padding: 3rem 1.5rem;
+  }
+
+  .favorites-empty h2 {
+    font-size: 1.8rem;
+  }
+
+  .favorites-empty p {
+    font-size: 1rem;
+  }
+}
